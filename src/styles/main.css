@@ -1,3 +1,4 @@
+
 @layer reset, tokens, typography, components;
 
 @import "./base/_reset.css";
@@ -8,3 +9,12 @@
 @import "./components/_sidebar.css";
 @import "./components/_topbar.css";
 
+    #app {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        height: 100dvh;
+        gap: var(--space-md);
+        padding: var(--space-sm) var(--space-lg) var(--space-sm) var(--space-md);
+        background-color: var(--color-bg-app);
+        overflow: hidden;
+      }

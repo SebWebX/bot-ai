@@ -15,12 +15,14 @@
     }
 
     .sidebar__brand {
+        height: 3rem;
         display: flex;
         gap: var(--space-sm);
         padding-bottom: var(--space-md);
         border-bottom: 1px solid var(--color-primary-mid);
         align-items: center;
         margin-bottom: var(--space-xs);
+        
     }
 
     .sidebar__logo {

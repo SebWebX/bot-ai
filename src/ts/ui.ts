@@ -1,60 +1,108 @@
-import './style.css'
-import typescriptLogo from './assets/typescript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.ts'
+/**
+ * ui.ts
+ * Módulo encargado de la manipulación del DOM.
+ * Renderiza mensajes, indicadores y controla el scroll.
+ */
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${typescriptLogo}" class="framework" alt="TypeScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
 
-<div class="ticks"></div>
+import type {Message} from './types';
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://www.typescriptlang.org" target="_blank">
-          <img class="button-icon" src="${typescriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+function getElements(){
+    const contenedor = document.querySelector<HTMLElement>('.chat__messages');
+    const chatInput = document.querySelector<HTMLInputElement>('.chat__inputbar-field');
+    const btnEnviar =  document.querySelector<HTMLButtonElement>('.chat__inputbar-send');
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+    return{contenedor, chatInput, btnEnviar};
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+export function renderMessage(message: Message): void{
+  const {contenedor} = getElements();
+
+  if(!contenedor) return;
+  const div = document.createElement('div');
+  div.className = `chat__message chat__message--${message.role === 'bot' ? 'bot' : 'user'}`;
+
+  const avatar = document.createElement('div');
+  avatar.className = 'chat__message-avatar';
+  avatar.innerHTML = message.role === 'bot' 
+  ? `<svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+      <circle cx="6" cy="6" r="3.5" stroke="#534AB7" stroke-width="1"/>
+      <path d="M6 3.5v2.5l1.5 1.5" stroke="#534AB7" stroke-width="1" stroke-linecap="round"/>
+    </svg>`
+  : `<svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+      <circle cx="6" cy="4.5" r="2" fill="#534AB7"/>
+      <path d="M1.5 11c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5" stroke="#534AB7" stroke-width="1" stroke-linecap="round"/>
+    </svg>`;
+
+   const body = document.createElement('div');
+   body.className = 'chat__message-body';
+
+   const bubble = document.createElement('span');
+   bubble.className = 'chat__message-bubble';
+   bubble.textContent = message.content;
+
+   const time = document.createElement('time');
+   time.className = 'chat__message-time';
+   time.textContent = new Date().toLocaleTimeString('es-Mx', {
+    hour: '2-digit',
+    minute: '2-digit'
+   });
+
+   body.appendChild(bubble);
+   body.appendChild(time);
+
+   div.appendChild(avatar);
+   div.appendChild(body);
+
+   contenedor.appendChild(div);
+}
+
+export function scrollToBottom(): void{
+  const {contenedor} = getElements();
+  if(!contenedor) return;
+
+  contenedor.scrollTop = contenedor.scrollHeight;
+}
+
+export function showTypingIndicator(): void{
+  const {contenedor} = getElements();
+  if(!contenedor) return;
+
+  const div = document.createElement('div');
+  div.className = 'chat__message chat__message--bot';
+  div.id = 'typing-indicator';
+
+  const avatar = document.createElement('div');
+    avatar.className = 'chat__message-avatar';
+    avatar.innerHTML = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+    <circle cx="6" cy="6" r="3.5" stroke="#534AB7" stroke-width="1"/>
+    <path d="M6 3.5v2.5l1.5 1.5" stroke="#534AB7" stroke-width="1" stroke-linecap="round"/>
+    </svg>`;
+
+  const body = document.createElement('div');
+  body.className = 'chat__message-body';
+  const bubble = document.createElement('span');
+  bubble.className = 'chat__message-bubble'
+  bubble.textContent = "Escribiendo..."
+
+  body.appendChild(bubble);
+  div.appendChild(avatar);
+  div.appendChild(body);
+  contenedor.appendChild(div);
+}
+
+export function hideTypingIndicator(): void{
+  const indicator = document.getElementById('typing-indicator');
+
+  if(!indicator) return;
+
+  indicator.remove();
+}
+
+export function clearInput(): void{
+  const {chatInput} = getElements();
+
+  if(!chatInput) return;
+
+  chatInput.value = '';
+}

@@ -67,3 +67,12 @@ input?.addEventListener('keydown', (e) => {
     }
   
 });
+
+const welcomeMessage: Message = {
+    role: 'bot',
+    content: '¡Hola! Soy TechBot, tu asistente de TechStore. ¿En qué puedo ayudarte hoy?',
+    time: new Date().toLocaleTimeString('es-MX', {hour: '2-digit', minute: '2-digit'})
+};
+
+messages.push(welcomeMessage);
+renderMessage(welcomeMessage);

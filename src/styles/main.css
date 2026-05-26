@@ -19,3 +19,28 @@
     overflow: hidden;
     align-items: stretch;
 }
+
+@media (max-width: 768px){
+    #app{
+        grid-template-columns: 1fr;
+        padding: var(--space-xs);
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    .chat__message{
+        max-width: 90%;
+    }
+
+    .chat__inputbard-field{
+        font-size: var(--font-size-xs);
+        padding: var(--space-xs) var(--space-sm) !important;
+    }
+
+    .chat__inputbar-send{
+        width: 2rem;
+        height: 2rem;
+    }
+}

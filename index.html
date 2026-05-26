@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechBot AI</title>
+    <script type="module" crossorigin src="/bot-ai/assets/index-DdHDrBYg.js"></script>
+    <link rel="stylesheet" crossorigin href="/bot-ai/assets/index-Cvap8bti.css">
+  </head>
+  <body>
+    <div id="app" role="application">
+      <aside class="sidebar">
+        <div class="sidebar__brand" aria-label="TechBot AI - Asistente de tienda">
+            <span class="sidebar__logo"></span>
+            <div class="sidebar__brand-text">
+              <span class="sidebar__brand-name">TechBot AI</span>
+              <span class="sidebar__brand-sub">Asistente de tienda</span>
+            </div>
+        </div>
+
+        <nav class="sidebar__nav" aria-label="Navegación principal">
+          <ul class="sidebar__list">
+            <li class="sidebar__item sidebar__item--active">
+              <button class="sidebar__item-btn" type="button">Chat actual</button>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__status" aria-label="Estado: IA activa con Gemini">IA activa - Groq</div>
+      </aside>
+      <main class="chat">
+        <header class="chat__topbar">
+          <div class="chat__topbar-info">
+            <div class="chat__topbar-avatar"></div>
+            <div class="chat__topbar-text">
+              <span class="chat__topbar-name">Asistente TechBot</span>
+              <span class="chat__topbar-sub">Siempre disponible</span>
+            </div>
+          </div>
+
+          <span class="chat__topbar-badge"  role="status" aria-label="Estado: en línea">En línea</span>
+        </header>
+        <section class="chat__messages" aria-live="polite" aria-label="Conversación">
+         
+        </section>
+        <footer class="chat__inputbar">
+          <input class="chat__inputbar-field" type="text" placeholder="Escribe tu mensaje..." aria-label="Escribe tu mensaje">
+          <button class="chat__inputbar-send" type="button" aria-label="Enviar mensaje">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 8l12-6-6 12V9L2 8z" fill="white"/>
+            </svg>
+          </button>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

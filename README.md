@@ -9,7 +9,7 @@ Chatbot inteligente para e-commerce de tecnología, construido con TypeScript va
 ## 🌐 Demo
    [Ver proyecto en vivo](https://sebwebx.github.io/bot-ai/)
 
-## ✨ Características
+##  Características
 
 - 💬 **Chat en tiempo real** con IA conversacional (Llama 3.3 70B)
 - 🎨 **Diseño elegante** con paleta morada y experiencia tipo Claude/ChatGPT
@@ -20,7 +20,7 @@ Chatbot inteligente para e-commerce de tecnología, construido con TypeScript va
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 | Tecnología | Uso |
 |------------|-----|
@@ -33,7 +33,7 @@ Chatbot inteligente para e-commerce de tecnología, construido con TypeScript va
 
 ---
 
-## 🚀 Instalación
+##  Instalación
 
 ### Requisitos previos
 - Node.js 20+
@@ -62,7 +62,7 @@ Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
 ---
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 bot-ai/
@@ -91,7 +91,7 @@ bot-ai/
 
 ---
 
-## 🧠 Decisiones Técnicas
+##  Decisiones Técnicas
 
 ### Arquitectura modular
 Cada archivo TypeScript tiene una **responsabilidad única**:
@@ -128,7 +128,7 @@ Variables CSS centralizadas en `_tokens.css` para mantener consistencia visual y
 
 ---
 
-## 🎨 Paleta de Colores
+##  Paleta de Colores
 
 | Color | Hex | Uso |
 |-------|-----|-----|
@@ -141,7 +141,7 @@ Variables CSS centralizadas en `_tokens.css` para mantener consistencia visual y
 
 ---
 
-## 📝 Mejoras Futuras
+##  Mejoras Futuras
 
 - [ ] Persistencia de conversaciones con localStorage
 - [ ] Múltiples chats simultáneos en sidebar
@@ -152,7 +152,7 @@ Variables CSS centralizadas en `_tokens.css` para mantener consistencia visual y
 
 ---
 
-## 👤 Autor
+##  Autor
 
 **Sebastian Enriquez** ([@SebWebX](https://github.com/SebWebX))
 
@@ -160,6 +160,6 @@ Desarrollador frontend con Maestría en Calidad y Productividad, enfocado en con
 
 ---
 
-## 📄 Licencia
+##  Licencia
 
 Este proyecto está bajo la licencia MIT. Ver [LICENSE](LICENSE) para más detalles.

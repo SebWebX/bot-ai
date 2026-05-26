@@ -2,9 +2,12 @@
 
 Chatbot inteligente para e-commerce de tecnología, construido con TypeScript vanilla, Vite e integración con la API de Groq (Llama 3.3). Diseñado con arquitectura modular escalable y enfoque en accesibilidad.
 
-![TechBot AI](https://via.placeholder.com/1200x600?text=TechBot+AI+Screenshot)
+<img width="1330" height="756" alt="Captura de pantalla 2026-05-25 a la(s) 9 08 33 p m" src="https://github.com/user-attachments/assets/c34a34ca-0b19-4847-942d-459f92cbb0ce" />
+
 
 ---
+## 🌐 Demo
+   [Ver proyecto en vivo](https://sebwebx.github.io/bot-ai/)
 
 ## ✨ Características
 

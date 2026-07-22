@@ -1,8 +1,4 @@
-/**
- * api/chat.ts
- * Función serverless que actúa como proxy entre el frontend y la API de Groq.
- * Protege la API Key evitando exponerla al cliente.
- */
+
 
 export default async function handler(request: Request): Promise<Response> {
 

@@ -7,11 +7,12 @@ Chatbot inteligente para e-commerce de tecnología, construido con TypeScript va
 
 ---
 ## 🌐 Demo
-   [Ver proyecto en vivo](https://sebwebx.github.io/bot-ai/)
+   [Ver proyecto en vivo](https://sebwebx.github.io/bot-ai/](https://bot-ai-rho-one.vercel.app/)
 
 ##  Características
 
-- 💬 **Chat en tiempo real** con IA conversacional (Llama 3.3 70B)
+- 💬 **Chat en tiempo real** con IA conversacional (GPT OSS 120B)
+- 🔒 **Backend serverless** que protege la API Key del cliente
 - 🎨 **Diseño elegante** con paleta morada y experiencia tipo Claude/ChatGPT
 - ♿ **Accesibilidad** completa con ARIA labels y navegación por teclado
 - 📱 **Responsive Design** adaptado para móvil, tablet y desktop
@@ -28,7 +29,8 @@ Chatbot inteligente para e-commerce de tecnología, construido con TypeScript va
 | **CSS3** | Estilos con metodología BEM y `@layer` |
 | **TypeScript** | Lógica con tipado estático |
 | **Vite** | Build tool y servidor de desarrollo |
-| **Groq API** | Modelo Llama 3.3 70B |
+| **Vercel Edge Functions** | Backend serverless proxy |
+| **Groq API** | Modelo GPT OSS 120B |
 | **Git/GitHub** | Control de versiones con Conventional Commits |
 
 ---

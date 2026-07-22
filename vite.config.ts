@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/bot-ai/'
+  base: process.env.VERCEL ? '/' : '/bot-ai/'
 });
